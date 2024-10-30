@@ -1,0 +1,115 @@
+@use "./../../../../public/styles/colors.scss";
+
+.link-activo {
+  color: colors.$color-primario;
+  font-weight: bold;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: beige;
+  border-bottom: 2px solid #ff8c00;
+
+  h1 {
+    color: #ff8c00;
+    font-size: 32px;
+    font-family: fantasy;
+    font-style: italic;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    background-image: repeating-linear-gradient(
+        45deg,
+        #000000 25%,
+        transparent 25%,
+        transparent 75%,
+        #000000 75%,
+        #000000
+      ),
+      repeating-linear-gradient(
+        45deg,
+        #000000 25%,
+        #e5e5f7 25%,
+        #e5e5f7 75%,
+        #000000 75%,
+        #000000
+      );
+    background-position: 0 0, 15px 15px;
+    background-size: 30px 30px;
+    padding: 1%;
+    border-radius: 8px;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    a {
+      color: black;
+      font-size: 16px;
+      text-decoration: none;
+      margin-right: 20px;
+      transition: color 0.3s ease;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &.link-activo {
+        font-weight: bold;
+        color: #ff8c00;
+      }
+
+      &:hover {
+        color: #19d408;
+      }
+    }
+
+    .usuario {
+      position: relative;
+
+      a {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        margin-right: 0;
+
+        &::after {
+          font-size: 12px;
+          margin-left: 5px;
+        }
+      }
+
+      .dropdown {
+        display: none;
+        position: absolute;
+        right: 0;
+        top: 100%;
+        background-color: white;
+        border: 1px solid #ccc;
+        padding: 5px;
+        z-index: 10;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+        a {
+          display: block;
+          padding: 5px 10px;
+          white-space: nowrap;
+          color: black;
+          text-decoration: none;
+
+          &:hover {
+            background-color: #f0f0f0;
+          }
+        }
+      }
+
+      &:hover .dropdown {
+        display: block;
+      }
+    }
+  }
+}

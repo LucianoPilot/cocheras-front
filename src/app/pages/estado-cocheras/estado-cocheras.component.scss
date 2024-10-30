@@ -1,0 +1,106 @@
+@use "./../../../../public/styles/tablas.scss";
+
+/*.main {
+  background-color: #fff;
+  background-image: url("lot.jpg");
+} */
+
+.flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  padding: 4rem;
+  background-color: #f3f4f6;
+  background-image: url("lot.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+table {
+  background-color: beige;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+thead td {
+  color: #ff8c00;
+  padding: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+tbody tr {
+  border-bottom: 1px solid #ddd;
+}
+
+tbody td {
+  padding: 1rem;
+  text-align: center;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+button.disponible {
+  background-color: #4caf50;
+}
+
+button.disponible:hover {
+  background-color: #43a047;
+}
+
+button.deshabilitada {
+  background-color: #f44336;
+}
+
+button.deshabilitada:hover {
+  background-color: #e53935;
+}
+
+.acciones-container button {
+  background: none;
+  padding: 0.3rem;
+  cursor: pointer;
+  border: none;
+}
+
+.acciones-container img {
+  width: 5px;
+  height: 20px;
+  transition: transform 0.2s ease;
+}
+
+.acciones-container img:hover {
+  transform: scale(1.1);
+}
+
+#agregar-cochera {
+  background-color: #ff8c00;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#agregar-cochera:hover {
+  background-color: #43a047;
+}
