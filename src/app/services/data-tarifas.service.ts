@@ -11,37 +11,38 @@ export class DataTarifasService {
   authService = inject(DataAuthService);
 
   constructor() {
-    this.getTarifas();
+    this.loadData();
+  }
+
+  async loadData() {
+    await this.getTarifas();
   }
 
   async getTarifas() {
-    const res = await fetch(environment.API_URL + 'tarifas', {
+    const answ = await fetch(environment.API_URL + 'tarifas', {
       headers: {
         authorization: 'Bearer ' + localStorage.getItem('authToken'),
       },
     });
-    if (res.status !== 200) {
-      console.log('Error');
-    } else {
-      this.tarifas = await res.json();
-    }
+    if (answ.status !== 200) return;
+    const resJson: Tarifa[] = await answ.json();
+    this.tarifas = resJson;
   }
 
-  async actualizarTarifa(idTarifa: string, nuevoValor: number) {
-    const body = { idTarifa, nuevoValor };
-    const res = await fetch(`${environment.API_URL}cocheras/${idTarifa}`, {
+  async actualizarTarifa(idTarifa: string, newValor: number) {
+    const body = { idTarifa, newValor };
+    const answ = await fetch(environment.API_URL + `cocheras/${idTarifa}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: 'Bearer ' + localStorage.getItem('authToken'),
+        authorization: 'Bearer ' + localStorage.getItem('authToken'),
       },
       body: JSON.stringify(body),
     });
-
-    if (res.status !== 200) {
-      console.log('No se pudo actualizar la tarifa');
+    if (answ.status !== 200) {
+      console.log('Error');
     } else {
-      console.log('Actualizada correctamente');
+      console.log('Tarifa actualizada correctamente');
       await this.loadData();
     }
   }

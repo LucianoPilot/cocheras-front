@@ -9,5 +9,4 @@ export const soloPublicoGuard: CanActivateFn = (route, state) => {
   if (!dataAuthService.usuario) return true;
   const url = router.parseUrl('estado-cocheras');
   return new RedirectCommand(url);
-
 };

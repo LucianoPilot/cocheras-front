@@ -6,14 +6,14 @@
     >
     @if(esAdmin){
     <a [routerLink]="['/reportes']" routerLinkActive="link-activo">Reportes</a>
-    <a [routerLink]="['/login']" routerLinkActive="link-activo">Precios</a>
-    }
+    <a [routerLink]="['/tarifas']" routerLinkActive="link-activo">Tarifas</a>
     <div class="usuario">
       <a>Usuario</a>
-      <div class="dropdown">
+      <div class="cerrar-sesion">
         <button (click)="cerrarSesion()">Cerrar sesión</button>
       </div>
     </div>
+    }
   </nav>
 </header>
 <router-outlet />

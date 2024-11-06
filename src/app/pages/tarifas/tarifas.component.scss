@@ -1,73 +1,65 @@
-.flex-column-center {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background-color: #f5f5f5;
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  width: 80%;
+  margin: 20px auto;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 table {
-  width: 80%;
+  width: 100%;
   border-collapse: collapse;
+  table-layout: fixed;
   margin-top: 20px;
-  background-color: #ffffff;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  overflow: hidden;
-
-  thead {
-    background-color: #4caf50;
-    color: white;
-    text-align: left;
-    font-weight: bold;
-
-    td {
-      padding: 12px;
-      font-size: 1rem;
-      text-transform: uppercase;
-    }
-  }
-
-  tbody {
-    tr {
-      &:nth-child(even) {
-        background-color: #f9f9f9;
-      }
-
-      &:hover {
-        background-color: #e8f5e9;
-      }
-
-      td {
-        padding: 10px 12px;
-        text-align: center;
-        font-size: 0.9rem;
-        color: #333;
-
-        &:first-child {
-          font-weight: bold;
-        }
-      }
-    }
-  }
+  font-size: 14px;
 }
 
-button {
-  background-color: #4caf50;
-  color: white;
-  padding: 8px 16px;
+th {
+  background-color: #f5a002;
+  color: beige;
+  padding: 12px 15px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+td {
+  padding: 12px 40px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  white-space: nowrap;
+}
+
+.id {
+  font-weight: bold;
+  color: #333;
+}
+
+td:nth-child(3) {
+  color: #28a745;
+}
+
+.boton-actualizar {
+  background-color: transparent;
   border: none;
-  border-radius: 4px;
   cursor: pointer;
-  font-size: 0.9rem;
-  transition: background-color 0.3s;
+  padding: 5px;
+  transition: transform 0.3s ease-in-out;
 
   &:hover {
-    background-color: #388e3c;
+    transform: scale(1.1);
   }
 
-  &:active {
-    background-color: #2e7d32;
+  img {
+    
+    width: 20px;
+    height: 20px;
   }
 }
